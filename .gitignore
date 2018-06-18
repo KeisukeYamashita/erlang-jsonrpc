@@ -1,14 +1,18 @@
-### https://raw.github.com/github/gitignore/982268df04842c9b34b7bdb0c4b0696b7db6e6fd/Erlang.gitignore
-
+.rebar3
+_*
 .eunit
-deps
 *.o
 *.beam
 *.plt
+*.swp
+*.swo
+.erlang.cookie
+ebin
+log
 erl_crash.dump
-ebin/*.beam
-rel/example_project
-.concrete/DEV_MODE
 .rebar
-
-
+logs
+_build
+.idea
+*.iml
+rebar3.crashdump
