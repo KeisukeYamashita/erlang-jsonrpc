@@ -2,6 +2,13 @@
 
 erlang-jsonrpc is a erlang library use for interacting to your server with JSON-RPC.
 
+## Build 
+Compile with this command.
+
+```
+$ rebar3 compile
+```
+
 ## Contribution
 To contribute, just send us a pull request!
 If it is valid, you will be added on the contribution doc in `/doc/contributor.md` .
