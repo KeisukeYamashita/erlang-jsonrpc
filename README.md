@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # erlang-jsonrpc
 
 erlang-jsonrpc is a erlang library use for interacting to your server with JSON-RPC.
@@ -18,14 +17,3 @@ If it is valid, you will be added on the contribution doc in `/doc/contributor.m
 Copyright 2018 Keisuke Yamashita.
 
 Licensed under the Apache 2.0 license.
-=======
-erjsonrpc
-=====
-
-An OTP application
-
-Build
------
-
-    $ rebar3 compile
->>>>>>> :tada: initail commit
