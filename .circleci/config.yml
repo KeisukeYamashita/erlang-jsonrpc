@@ -1,0 +1,51 @@
+version: 2.0
+
+references:
+  work_dir: &work_dir ~/dart-jsonrpc
+  vendor_path: &vendor_path ~/dart-jsonrpc/.pub
+  erlang_container_config: &erlang_container_config
+    docker:
+      - image: erlang:20.3.8
+        environment: 
+           VENDOR_PATH: *vendor_path
+
+  vendoring: &vendoring
+      run:
+        name: vendoring
+        command: |
+          if [ ! -e ${VENDOR_PATH} ]; then
+            pub get
+          fi
+
+  store-modules: &store-modules
+    save_cache:
+      key: module-cache-{{ .Branch }}--{{ checksum "package.json" }}
+      paths:
+        - node_modules/
+
+
+  restore-modules: &restore-modules
+    restore_cache:
+      keys:
+        - module-cache-{{ .Branch }}--{{ checksum "package.json" }}
+        - module-cache-{{ .Branch }}
+        - module-cache-
+
+jobs:
+  test:
+    <<: *erlang_container_config
+    steps:
+      - checkout
+      # - *restore-modules
+      # - *vendoring
+      - run:
+          name: Run test
+          command: |
+            rebar3 eunit
+      # - *store-modules
+
+workflows:
+  version: 2
+  test:
+    jobs:
+      - test
