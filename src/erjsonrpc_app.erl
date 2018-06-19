@@ -9,7 +9,9 @@
 -behaviour(application).
 
 %% Application callbacks
--export([start/2, stop/1,add/2]).
+-export([start/2, stop/1]).
+
+-include("erjsonrpc.hrl").
 
 %%====================================================================
 %% API
@@ -21,10 +23,6 @@ start(_StartType, _StartArgs) ->
 %%--------------------------------------------------------------------
 stop(_State) ->
     ok.
-
-add(A,B) ->
-    A + B.
-    
 
 %%====================================================================
 %% Internal functions
