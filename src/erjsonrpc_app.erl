@@ -4,11 +4,14 @@
 %%%-------------------------------------------------------------------
 
 -module(erjsonrpc_app).
+-author("KeisukeYamashita<19yamashita15@gmail.com").
 
 -behaviour(application).
 
 %% Application callbacks
 -export([start/2, stop/1]).
+
+-include("erjsonrpc.hrl").
 
 %%====================================================================
 %% API
