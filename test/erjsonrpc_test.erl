@@ -23,7 +23,3 @@ setHeader_test() ->
   Client = erjsonrpc_client:newJSONRPCClient(?URL),
   Client2 = erjsonrpc_client:setHeader(Client,2),
   ?assertEqual(2,Client2#jsonrpc.header).
-
-call_test() ->
-  Client = erjsonrpc_client:newJSONRPCClient(?URL),
-  ?assertEqual(2, erjsonrpc_client:call(Client,"He")).
