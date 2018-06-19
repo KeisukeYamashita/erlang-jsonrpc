@@ -5,7 +5,7 @@ references:
   vendor_path: &vendor_path ~/dart-jsonrpc/.pub
   erlang_container_config: &erlang_container_config
     docker:
-      - image: google/dart:2.0-dev
+      - image: erlang:20.3.8
         environment: 
            VENDOR_PATH: *vendor_path
 
