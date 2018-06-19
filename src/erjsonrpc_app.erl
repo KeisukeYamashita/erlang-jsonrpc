@@ -4,23 +4,27 @@
 %%%-------------------------------------------------------------------
 
 -module(erjsonrpc_app).
+-author("KeisukeYamashita<19yamashita15@gmail.com").
 
 -behaviour(application).
 
 %% Application callbacks
--export([start/2, stop/1]).
+-export([start/2, stop/1,add/2]).
 
 %%====================================================================
 %% API
 %%====================================================================
 
 start(_StartType, _StartArgs) ->
-    io:format("Hello World~n"),
     erjsonrpc_sup:start_link().
 
 %%--------------------------------------------------------------------
 stop(_State) ->
     ok.
+
+add(A,B) ->
+    A + B.
+    
 
 %%====================================================================
 %% Internal functions
