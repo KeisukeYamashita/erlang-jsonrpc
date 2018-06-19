@@ -12,8 +12,7 @@
 
 test() ->
   newJSONRPCClient_test(),
-  setHeader_test(),
-  call_test().
+  setHeader_test().
 
 newJSONRPCClient_test() ->
   Client = erjsonrpc_client:newJSONRPCClient(?URL),
