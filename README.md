@@ -21,8 +21,14 @@ rebar3 eunit
 ## Usage
 
 ```erlang
-Url = "https://localhost.com".
-Client = erjsonrpc:newJSONRPCClient(Url).
+Url = "https://localhost.com",
+Client = erjsonrpc:newJSONRPCClient(Url),
+Method = "getUser",
+Params = #{
+    id => 1,
+    name => "KeisukeYamashita",
+},
+Response = erjsonrpc:call(Client, Method, Params).
 ```
 
 ## Contribution
