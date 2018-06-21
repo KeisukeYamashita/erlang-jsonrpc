@@ -4,7 +4,7 @@
 
 %% API
 -export([test/0]).
--define(URL, "https:localhost:5000").
+-define(URL, "http://localhost:5050/json/post").
 
 -include("erjsonrpc.hrl").
 
@@ -22,4 +22,3 @@ setHeader_test() ->
   Client = erjsonrpc_client:newJSONRPCClient(?URL),
   Client2 = erjsonrpc_client:setHeader(Client,2),
   ?assertEqual(2,Client2#jsonrpc.header).
-
