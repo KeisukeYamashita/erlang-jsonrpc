@@ -15,19 +15,17 @@ setHeader(Client, Header) ->
 
 call(Client, Method) ->
     #jsonrpc{url=Url} = Client,
-    Id = timestamp:get_timestamp(),
     Json = #{
         <<"jsonprc">> => "2.0",
         <<"method">> => Method,
         <<"params">> => "Hello",
         <<"id">> => timestamp:get_timestamp()
     },
-    io:format("~w~n",[jsone:encode(Json)]),
     inets:start(),
     {ok, {{_,200,_},_, Body}} = httpc:request(post,
                     {Url,
                     [],
-                    "application/json",
+                    ["application/json"],
                     [jsone:encode(Json)]},
                     [],
                     []),
